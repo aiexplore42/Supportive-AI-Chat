@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fluxpuls – Supportive AI Chat Demo</title>
+    <title>Supportive AI Chat Demo</title>
     <style>
         /* ----- General layout ----- */
         body {
@@ -16,6 +16,122 @@
             padding: 0 1rem;
         }
         h1 { text-align: center; margin-bottom: 0.5rem; }
+
+            /* ----- Instruction box ----- */
+    .instructions {
+        background: #e8f4ff;
+        border-left: 6px solid #0066ff;
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+    .instructions ol { margin-left: 1.2rem; }
+
+    /* ----- Prompt boxes ----- */
+    .prompt {
+        background: #f4f9ff;
+        border-left: 6px solid #0066ff;
+        padding: 0.9rem;
+        margin: 0.9rem 0;
+        position: relative;
+        white-space: pre-wrap;
+        transition: background 0.3s;
+    }
+    .prompt:hover {
+        background: #dcecff;
+    }
+    .prompt .copy-btn {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        background: #0066ff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 2px 6px;
+        font-size: 0.85rem;
+        cursor: pointer;
+    }
+    .prompt .copy-btn:hover { background: #004ecc; }
+
+    /* ----- Chat button ----- */
+    .chat-btn {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 1.5rem auto;
+        padding: 0.8rem 1.2rem;
+        background-color: #0066ff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1.1rem;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .chat-btn:hover { background-color: #004ecc; }
+
+    /* ----- Footer & disclaimer ----- */
+    footer {
+        margin-top: 2rem;
+        font-size: 0.85rem;
+        text-align: center;
+        color: #777;
+        line-height: 1.4;
+    }
+    .disclaimer {
+        font-size: 0.78rem;
+        color: #555;
+        background: #fafafa;
+        border-left: 4px solid #ff9900;
+        padding: 0.6rem;
+        margin: 1rem 0;
+        display: inline-block;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    /* ----- New CSS Instructions ----- */
+    .instructions {
+        background: #e8f4ff;
+        border-left: 6px solid #0066ff;
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+    .instructions ol { margin-left: 1.2rem; }
+
+    .prompt {
+        background: #f4f9ff;
+        border-left: 6px solid #0066ff;
+        padding: 0.9rem;
+        margin: 0.9rem 0;
+        position: relative;
+        white-space: pre-wrap;
+        transition: background 0.3s;
+    }
+    .prompt:hover {
+        background: #dcecff;
+    }
+    .prompt .copy-btn {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        background: #0066ff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 2px 6px;
+        font-size: 0.85rem;
+        cursor: pointer;
+    }
+    .prompt .copy-btn:hover { background: #004ecc; }
+
+    .chat-btn {
+        display: block;
+        width: 100%;
+        max-width: 
+
 
         /* ----- Instruction box ----- */
         .instructions {
