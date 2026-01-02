@@ -1,0 +1,163 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fluxpuls – Supportive AI Chat Demo</title>
+    <style>
+        /* ----- General layout ----- */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            line-height: 1.6;
+            color: #333;
+            padding: 0 1rem;
+        }
+        h1 { text-align: center; margin-bottom: 0.5rem; }
+
+        /* ----- Instruction box ----- */
+        .instructions {
+            background: #e8f4ff;
+            border-left: 6px solid #0066ff;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+        .instructions ol { margin-left: 1.2rem; }
+
+        /* ----- Prompt boxes ----- */
+        .prompt {
+            background: #f4f9ff;
+            border-left: 6px solid #0066ff;
+            padding: 0.9rem;
+            margin: 0.9rem 0;
+            position: relative;
+            white-space: pre-wrap;
+        }
+        .prompt .copy-btn {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: #0066ff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 2px 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+        .prompt .copy-btn:hover { background: #004ecc; }
+
+        /* ----- Chat button ----- */
+        .chat-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 1.5rem auto;
+            padding: 0.8rem 1.2rem;
+            background-color: #0066ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .chat-btn:hover { background-color: #004ecc; }
+
+        /* ----- Footer & disclaimer ----- */
+        footer {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            text-align: center;
+            color: #777;
+            line-height: 1.4;
+        }
+        .disclaimer {
+            font-size: 0.78rem;
+            color: #555;
+            background: #fafafa;
+            border-left: 4px solid #ff9900;
+            padding: 0.6rem;
+            margin: 1rem 0;
+            display: inline-block;
+            text-align: left;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Fluxpuls – Supportive AI Chat</h1>
+
+<!-- 
+￼
+ Instructions -->
+<div class="instructions">
+    <strong>How to use:</strong>
+    <ol>
+        <li>Read the short text below that matches the kind of support you need.</li>
+        <li>Click the <strong>Copy</strong> button to copy that text.</li>
+        <li>Click the <strong>Free Chat</strong> button – it opens OpenAI’s free ChatGPT web UI.</li>
+        <li>Paste the copied text into the chat window and start a supportive conversation.</li>
+    </ol>
+</div>
+
+<!-- 
+￼
+ Ready‑to‑copy supportive texts (variations) -->
+<div class="prompt" id="p1">
+    <button class="copy-btn" onclick="copyPrompt('p1')">Copy</button>
+You are a friendly, supportive companion. Whenever someone shares a concern, respond with empathy, encouragement, and a positive outlook.
+</div>
+
+<div class="prompt" id="p2">
+    <button class="copy-btn" onclick="copyPrompt('p2')">Copy</button>
+You are a calm, patient mentor. Offer step‑by‑step guidance for anyone seeking help with a problem, keeping the tone encouraging and optimistic.
+</div>
+
+<div class="prompt" id="p3">
+    <button class="copy-btn" onclick="copyPrompt('p3')">Copy</button>
+You are a caring friend. When someone mentions a stressful day, acknowledge their feelings, suggest a simple self‑care tip, and end with a hopeful statement.
+</div>
+
+<!-- 
+￼
+ Button that opens the free chat -->
+<a href="https://chat.openai.com/" target="_blank" class="chat-btn">Free Chat (OpenAI)</a>
+
+<script>
+function copyPrompt(id) {
+    const el = document.getElementById(id);
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    try {
+        document.execCommand('copy');
+        alert('Text copied to clipboard!');
+    } catch (e) {
+        alert('Copy failed – please select the text manually.');
+    }
+    sel.removeAllRanges();
+}
+</script>
+
+<!-- 
+￼
+ Footer with branding and disclaimer -->
+<footer>
+    © 2026 Fluxpuls – Powered by Proton. 
+    <div class="disclaimer">
+        <strong>Disclaimer:</strong> The AI replies are generated for experimental use only and may contain
+        inaccuracies, outdated information, or unintended bias. Do not rely on them for legal, medical,
+        financial, or safety‑critical decisions. Always verify important information with authoritative sources.
+    </div>
+    This page is for educational/demo purposes only.
+</footer>
+
+</body>
+</html>
